@@ -1,0 +1,200 @@
+[
+  {
+    "No.": 1,
+    "Unit/Session": "Foundations of Learning",
+    "Question": "What are the key elements in behaviorism that are important for learning?",
+    "Option A": "The teacher, the student, and the material",
+    "Option B": "The classroom, the curriculum, and the assessments",
+    "Option C": "The stimulus, the response, and the association between the two",
+    "Option D": "The teacher, the reinforcement, and the assessment",
+    "Correct answer": "The stimulus, the response, and the association between the two",
+    "Explaination": null
+  },
+  {
+    "No.": 2,
+    "Unit/Session": "Foundations of Learning",
+    "Question": "What is the role of memory in behaviorism?",
+    "Option A": "It is not typically addressed by behaviorists",
+    "Option B": "It is emphasized as a critical factor for successful learning",
+    "Option C": "It is considered an innate ability that is not influenced by learning",
+    "Option D": "It is considered important but not critical for learning",
+    "Correct answer": "It is not typically addressed by behaviorists",
+    "Explaination": null
+  },
+  {
+    "No.": 3,
+    "Unit/Session": "Foundations of Learning",
+    "Question": "What types of learning are best explained by cognitive theories?",
+    "Option A": "Basic forms of learning",
+    "Option B": "Forms of learning that involve overt performance",
+    "Option C": "Complex forms of learning such as reasoning, problem-solving, and information processing",
+    "Option D": "Forms of learning that involve the manipulation of stimulus material",
+    "Correct answer": "Complex forms of learning such as reasoning, problem-solving, and information processing",
+    "Explaination": null
+  },
+  {
+    "No.": 4,
+    "Unit/Session": "Designing Learning Experiences",
+    "Question": "Which component of the 4C/ID model makes primary use of behaviorist learning principles?",
+    "Option A": "Learning tasks",
+    "Option B": "Procedural information",
+    "Option C": "Part task practice",
+    "Option D": "Supportive Information",
+    "Correct answer": "Part task practice",
+    "Explaination": null
+  },
+  {
+    "No.": 5,
+    "Unit/Session": "Designing Learning Experiences",
+    "Question": "What is the Four-Component Instructional Design (4C/ID) model?",
+    "Option A": "A model that stresses working with inauthentic tasks to stimulate practice in the workplace",
+    "Option B": "A model that stresses working with authentic tasks to stimulate practice in the workplace",
+    "Option C": "A model that stresses working with inauthentic tasks to stimulate practice outside the workplace",
+    "Option D": "A model that stresses working with authentic tasks to stimulate practice outside the workplace",
+    "Correct answer": "A model that stresses working with authentic tasks to stimulate practice in the workplace",
+    "Explaination": null
+  },
+  {
+    "No.": 6,
+    "Unit/Session": "Designing Learning Experiences",
+    "Question": "What is the underlying productive mechanism making some difficulties more desirable than others?",
+    "Option A": "Intrinsic, i.e. content-inherent cognitive load is high, while germane cognitive load is held comparatively low.",
+    "Option B": "Extraneous, i.e. learning-irrelevant cognitive load is reduced, while intrinsic cognitive load is held comparatively high",
+    "Option C": "Germane, i.e. learning-related cognitive load is increased, while extraneous load remains relatively low (x)",
+    "Option D": "All choices listed in this question",
+    "Correct answer": "Germane, i.e. learning-related cognitive load is increased, while extraneous load remains relatively low (x)",
+    "Explaination": null
+  },
+  {
+    "No.": 7,
+    "Unit/Session": "Highly informative Learning Analytics",
+    "Question": "What is the definition of Learning Analytics? ",
+    "Option A": "The process of designing and implementing online courses ",
+    "Option B": "The measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the environments in which it occurs",
+    "Option C": "The use of technology to manage educational resources",
+    "Option D": "The collection of data about learners and their contexts, for purposes of understanding and optimising learning and the environments in which it occurs",
+    "Correct answer": "The measurement, collection, analysis and reporting of data about learners and their contexts, for purposes of understanding and optimising learning and the environments in which it occurs",
+    "Explaination": null
+  },
+  {
+    "No.": 8,
+    "Unit/Session": "Highly informative Learning Analytics",
+    "Question": "What is the purpose of learning analytics?",
+    "Option A": "To understand and optimize learning and the environments in which it occurs.",
+    "Option B": "To replace teachers with computers.",
+    "Option C": "To reduce the cost of education.",
+    "Option D": "To eliminate traditional teaching methods.",
+    "Correct answer": "To understand and optimize learning and the environments in which it occurs.",
+    "Explaination": null
+  },
+  {
+    "No.": 9,
+    "Unit/Session": "Ethics & Privacy",
+    "Question": "Mention one of the new rights established with the General Data Protection Regulation (GDPR) since 2018 in comparison to the old EU Data Protection Directive 95/46/EC? ",
+    "Option A": "Right to restrict processing",
+    "Option B": "Right to sell your data",
+    "Option C": "Right to have a personal data dashboard",
+    "Option D": "Right to see aggregated data of similar users ",
+    "Correct answer": "Right to restrict processing",
+    "Explaination": null
+  },
+  {
+    "No.": 10,
+    "Unit/Session": "Ethics & Privacy",
+    "Question": "Based on the EU Data Protection Directive 95/46/EC, the European Commission specified that the handling and use of personal data have to be: ",
+    "Option A": "passed on to other providers to encrypt the data",
+    "Option B": "safeguarded from secondary use and further processing",
+    "Option C": "anonymised even if there is a consent of the user",
+    "Option D": "stored no longer than 6 months",
+    "Correct answer": "safeguarded from secondary use and further processing",
+    "Explaination": null
+  },
+  {
+    "No.": 11,
+    "Unit/Session": "LA Supported Learning Design",
+    "Question": "What does the FoLA article identify as a challenge in using LA for LD?",
+    "Option A": "Lack of conceptual frameworks",
+    "Option B": "Difficulty in operating frameworks in educational practice",
+    "Option C": "Insufficient funding for research",
+    "Option D": "Resistance from students",
+    "Correct answer": "Answer: B) Difficulty in operating frameworks in educational practice",
+    "Explaination": "They note that while there are several frameworks, most are conceptual or difficult to operate in practice​​."
+  },
+  {
+    "No.": 12,
+    "Unit/Session": "LA Supported Learning Design",
+    "Question": "What iterative framework does the development of FoLA2 follow?",
+    "Option A": "ADDIE model",
+    "Option B": "SAM model",
+    "Option C": "DC4E model",
+    "Option D": "Waterfall model",
+    "Correct answer": "DC4E model",
+    "Explaination": "The development of FoLA2 follows the DC4E - The Design Cycle for Education, which involves iterative steps of requirements, grounding, design build, and evaluation​​."
+  },
+  {
+    "No.": 13,
+    "Unit/Session": "Writing DeLA",
+    "Question": "According to self-determination theory, humans desire feelings of...",
+    "Option A": "... autonomy, competence and relatedness",
+    "Option B": "... autonomy, competence and mindfulness",
+    "Option C": "... autonomy, competence and faithfulness",
+    "Option D": "... authority, competence and mindfulness",
+    "Correct answer": "... autonomy, competence and relatedness",
+    "Explaination": "Acooridng to self-determination theory, humans have the basic need for feelings of autonomy, competence and relatedness."
+  },
+  {
+    "No.": 14,
+    "Unit/Session": "Writing DeLA",
+    "Question": "Which of these is not an existing machine learning metric?",
+    "Option A": "Recall",
+    "Option B": "Quadratic Weighted Kappa",
+    "Option C": "F1-Score",
+    "Option D": "Set Inclusion",
+    "Correct answer": "Set Inclusion",
+    "Explaination": "Set Inclusion is not used as a machine learning metric."
+  },
+  {
+    "No.": 15,
+    "Unit/Session": "Collaboration DeLA",
+    "Question": "In computing indicators for collaboration feedback, why is Group Communication Analysis (GCA) preferred over Activity Based Collaboration Analysis (ABCA)?",
+    "Option A": "GCA differy between responsiveness and initiative",
+    "Option B": "ABCA is more time-consuming to implement",
+    "Option C": "GCA provides a more detailed analysis of individual participation levels.",
+    "Option D": "GCA takes discourse semantics into account",
+    "Correct answer": "GCA takes discourse semantics into account",
+    "Explaination": "Group Communication Analysis (GCA) is preferred over Activity Based Collaboration Analysis (ABCA) because GCA takes discourse semantics into account. It integrates several computational linguistic analysis techniques and time series analysis to detect emergent social roles in educational chat discussions. GCA uses semantic vectors and vector space calculations to analyze the content of interactions, providing a comprehensive understanding of the communication dynamics within a group. In contrast, ABCA relies on forum metadata to predict and influence student performance but does not incorporate linguistic properties into the analysis."
+  },
+  {
+    "No.": 16,
+    "Unit/Session": "Collaboration DeLA",
+    "Question": "What is the main goal of providing process feedback to students in CSCL environments?",
+    "Option A": "To reduce the workload of teachers",
+    "Option B": "To improve the technical skills of students",
+    "Option C": "To increase the number of forum posts",
+    "Option D": "To help students to enhance their metacognition and self-regulation",
+    "Correct answer": "To help students to enhance their metacognition and self-regulation",
+    "Explaination": "Process feedback is not focused on the validity of the given contents, but – in our case – on communicative and self-regulation skills, which fall into the given categories of thinking about ones thinking (metacogition) and behaviour (self-regulation) "
+  },
+  {
+    "No.": 17,
+    "Unit/Session": "Dashboard",
+    "Question": "What was the main research gap addressed by the study by Giogashvile et al., (2024)?",
+    "Option A": "The lack of LAD design principles",
+    "Option B": "How learners interpret and use LAD feedback",
+    "Option C": "The effectiveness of LAD in improving grades",
+    "Option D": "The security of data in LADs",
+    "Correct answer": "How learners interpret and use LAD feedback",
+    "Explaination": "The study aimed to understand how learners make sense of the information visualized on LADs and how they self-reflect using these tools."
+  },
+  {
+    "No.": 18,
+    "Unit/Session": "Dashboard",
+    "Question": "Which of the following strategies did students with personalised feedback mention more frequently in their self-reflection texts in the study by Giogashvile et al., (2024) compared to students with generic feedback?",
+    "Option A": "Checking their answers before submitting quizzes",
+    "Option B": "Consuming learning content",
+    "Option C": "Ignoring feedback",
+    "Option D": "Focusing on emotional aspects",
+    "Correct answer": "Checking their answers before submitting quizzes",
+    "Explaination": "Students who received personalized feedback expressed the intention to check their answers before submitting quizzes or assignments more frequently than those in the control group."
+  }
+]
