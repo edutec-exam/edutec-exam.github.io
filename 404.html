@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Practice App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      margin-bottom: 24px;
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: white;
+    }
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+      line-height: 1.05;
+    }
+    header p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+      margin: 18px 0;
+      align-items: center;
+    }
+    .status-bar strong {
+      display: block;
+      font-size: 0.97rem;
+      line-height: 1.4;
+      margin-left: auto;
+    }
+    .status-bar.bottom-bar {
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .floating-score {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      padding: 12px 18px;
+      border-radius: 16px;
+      background: rgba(37, 99, 235, 0.95);
+      color: white;
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.2);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      min-width: 220px;
+      text-align: center;
+    }
+    .button-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .button-primary:hover {
+      transform: translateY(-1px);
+      background: #1d4ed8;
+    }
+    .unit-group {
+      margin-bottom: 26px;
+      padding: 20px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+    }
+    .unit-title {
+      margin: 0 0 16px;
+      font-size: 1.2rem;
+      letter-spacing: -.02em;
+      color: #111827;
+    }
+    .question-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 18px;
+      background: #fafbff;
+    }
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .question-number {
+      font-weight: 700;
+      color: #2563eb;
+    }
+    .question-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+    .options {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+      margin-bottom: 14px;
+    }
+    .option-button {
+      width: 100%;
+      background: white;
+      border: 1px solid #d1d5db;
+      border-radius: 14px;
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 0.96rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .option-button:hover {
+      border-color: #2563eb;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+      transform: translateY(-1px);
+    }
+    .option-button.correct {
+      border-color: #16a34a;
+      background: #dcfce7;
+      color: #166534;
+    }
+    .option-button.wrong {
+      border-color: #dc2626;
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .feedback {
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .feedback.correct {
+      background: #ecfdf5;
+      color: #166534;
+      border: 1px solid #a7f3d0;
+    }
+    .feedback.wrong {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .explanation {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+    .hint {
+      margin-top: 8px;
+      font-size: 0.92rem;
+      color: #6b7280;
+    }
+    @media (max-width: 720px) {
+      .status-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Exam Practice Questions</h1>
+      <p></p>
+    </header>
+
+    <div class="status-bar">
+      <button id="resetAll" class="button-primary">Reset all answers</button>
+    </div>
+
+    <div id="quiz"></div>
+
+    <div class="status-bar bottom-bar">
+      <button id="resetAllBottom" class="button-primary">Reset all answers</button>
+    </div>
+
+    <div id="floatingScore" class="floating-score">
+      <strong id="scoreText">Answered 0 / 18 · Correct 0</strong>
+    </div>
+  </main>
+
+  <script>
+    let questions = [];
+    const quizRoot = document.getElementById('quiz');
+    const scoreText = document.getElementById('scoreText');
+    const resetAllButton = document.getElementById('resetAll');
+    let answeredCount = 0;
+    let correctCount = 0;
+    const state = new Map();
+
+    function setLoadingMessage(message) {
+      quizRoot.innerHTML = `<p class="hint">${message}</p>`;
+    }
+
+    function normalizeCorrectLetter(question) {
+      const raw = String(question['Correct answer'] || '').trim();
+      const letterMatch = raw.match(/^Answer:\s*([A-D])\)/i);
+      if (letterMatch) {
+        return letterMatch[1].toUpperCase();
+      }
+      for (const letter of ['A', 'B', 'C', 'D']) {
+        const optionText = String(question[`Option ${letter}`] || '').trim();
+        if (optionText && optionText === raw) {
+          return letter;
+        }
+      }
+      return null;
+    }
+
+    function updateScore() {
+      scoreText.textContent = `Answered ${answeredCount} / ${questions.length} · Correct ${correctCount}`;
+    }
+
+    function createResultElement(question, selectedLetter, buttons) {
+      const result = document.createElement('div');
+      const correctLetter = normalizeCorrectLetter(question);
+      const correctText = correctLetter ? question[`Option ${correctLetter}`] : question['Correct answer'];
+      const isCorrect = selectedLetter === correctLetter;
+      result.className = `feedback ${isCorrect ? 'correct' : 'wrong'}`;
+      result.innerHTML = isCorrect
+        ? `<strong>Correct!</strong> Well done.`
+        : `<strong>Incorrect.</strong> The correct answer is ${correctLetter ? `Option ${correctLetter}` : ''} <strong>${correctText}</strong>.`;
+
+      if (question.Explaination) {
+        const explanation = document.createElement('div');
+        explanation.className = 'explanation';
+        explanation.innerHTML = `<strong>Explanation:</strong> ${question.Explaination}`;
+        result.appendChild(explanation);
+      }
+
+      buttons.forEach(button => {
+        button.disabled = true;
+        if (button.dataset.letter === correctLetter) {
+          button.classList.add('correct');
+        }
+        if (button.dataset.letter === selectedLetter && !isCorrect) {
+          button.classList.add('wrong');
+        }
+      });
+      return result;
+    }
+
+    function createQuestionCard(question) {
+      const card = document.createElement('article');
+      card.className = 'question-card';
+
+      const header = document.createElement('div');
+      header.className = 'question-header';
+      header.innerHTML = `
+        <div class="question-number">Question ${question['No.']}</div>
+        <div class="hint">Unit/Session: ${question['Unit/Session']}</div>
+      `;
+
+      const text = document.createElement('p');
+      text.className = 'question-text';
+      text.textContent = question.Question;
+
+      const optionsGroup = document.createElement('div');
+      optionsGroup.className = 'options';
+      const buttons = [];
+
+      ['A', 'B', 'C', 'D'].forEach(letter => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'option-button';
+        button.dataset.letter = letter;
+        button.textContent = `${letter}. ${question[`Option ${letter}`]}`;
+        button.addEventListener('click', () => {
+          if (state.has(question['No.'])) {
+            return;
+          }
+          const selectedLetter = button.dataset.letter;
+          state.set(question['No.'], selectedLetter);
+          answeredCount += 1;
+          const correctLetter = normalizeCorrectLetter(question);
+          if (selectedLetter === correctLetter) {
+            correctCount += 1;
+          }
+          const feedback = createResultElement(question, selectedLetter, buttons);
+          card.appendChild(feedback);
+          updateScore();
+        });
+        buttons.push(button);
+        optionsGroup.appendChild(button);
+      });
+
+      card.appendChild(header);
+      card.appendChild(text);
+      card.appendChild(optionsGroup);
+      return card;
+    }
+
+    function buildQuiz() {
+      quizRoot.innerHTML = '';
+      const grouped = questions.reduce((acc, question) => {
+        const unit = question['Unit/Session'] || 'Uncategorized';
+        if (!acc[unit]) acc[unit] = [];
+        acc[unit].push(question);
+        return acc;
+      }, {});
+
+      Object.keys(grouped).forEach(unit => {
+        const section = document.createElement('section');
+        section.className = 'unit-group';
+        const title = document.createElement('h2');
+        title.className = 'unit-title';
+        title.textContent = unit;
+        section.appendChild(title);
+        grouped[unit].forEach(question => {
+          section.appendChild(createQuestionCard(question));
+        });
+        quizRoot.appendChild(section);
+      });
+    }
+
+    function resetAll() {
+      answeredCount = 0;
+      correctCount = 0;
+      state.clear();
+      updateScore();
+      buildQuiz();
+    }
+
+    async function loadQuestions() {
+      setLoadingMessage('Loading questions...');
+      try {
+        const response = await fetch('questions.json');
+        if (!response.ok) {
+          throw new Error(`Failed to load questions.json (${response.status})`);
+        }
+        const data = await response.json();
+        if (!Array.isArray(data) || data.length === 0) {
+          throw new Error('questions.json is empty or malformed.');
+        }
+        questions = data;
+        answeredCount = 0;
+        correctCount = 0;
+        state.clear();
+        updateScore();
+        buildQuiz();
+      } catch (error) {
+        const hint = error.message.includes('Failed to fetch')
+        ? 'This usually happens when the page is opened directly from file://. Run a local web server and open the app through http://localhost to load questions correctly.'
+        : '';
+      quizRoot.innerHTML = `<p class="hint">Error loading questions: ${error.message}</p>${hint ? `<p class="hint">${hint}</p>` : ''}`;
+      }
+    }
+
+    resetAllButton.addEventListener('click', resetAll);
+    const resetAllBottomButton = document.getElementById('resetAllBottom');
+    resetAllBottomButton.addEventListener('click', resetAll);
+    updateScore();
+    loadQuestions();
+  </script>
+</body>
+</html>
